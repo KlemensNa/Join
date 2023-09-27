@@ -2,7 +2,7 @@
 
 ########### CONFIG ###############
 
-$recipient = 'alen-1997@hotmail.de';
+$recipient = 'klemens.naue@gmail.com';
 $redirect = 'reset.html';
 
 ########### CONFIG END ###########

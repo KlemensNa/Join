@@ -92,7 +92,7 @@ function renderBoardCard(categoryCard, titleCard, descriptionCard, ID, prioCard,
                 <div class="board_task_assignments">
                     <div class="board_task_working">
                         <div class="icons_container" id="board_icons_username${ID}"></div>
-                        <div class="board_prio"><img src="../assets/img/${prioCard}.png" /></div>
+                        <div class="board_prio"><img src="assets/img/${prioCard}.png" /></div>
                     </div>                            
                 </div>
             </div>
@@ -393,13 +393,10 @@ function isMobileDevice() {
 }
 
 
-
-
 /**
  * Eventlistner to render board if screen changes between desktop and MobileMode
  */
 window.addEventListener('resize', handleScreenResize);
-
 
 function handleScreenResize() {
     if (window.innerWidth < 900 && window.location.pathname === '/board.html') {
