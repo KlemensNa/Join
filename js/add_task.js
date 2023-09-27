@@ -36,8 +36,8 @@ async function initTask() {
   await includeHTML();
   await loadItems();
   column = localStorage.getItem('column');
-  renderCategories();
-  renderContacts('contactContainer', 'Add');
+  await renderCategories();
+  await renderContacts('contactContainer', 'Add');
   renderDueDate('Add');
 }
 
@@ -62,7 +62,7 @@ async function loadItems() {
  * @param {string} idContactContainer - div id
  * @param {string} mode - mode of either add or edit
  */
-function renderContacts(idContactContainer, mode) {
+async function renderContacts(idContactContainer, mode) {
   document.getElementById(idContactContainer).innerHTML = templateContactSelection(mode);
   for (let i = 0; i < contacts.length; i++) {
     const contact = contacts[i]['user_name'];
@@ -119,9 +119,9 @@ function templateContactsOptions(contact, i, mode) {
  */
 function templateNewContact() {
   let templateNewContact = /*html*/`
-  <div class="option contactList">
+  <div class="option contactList" onclick="inviteContact()">
     <div id="newContactAdd">Invite new contact</div>
-    <div class="newContact roundedBorder"><img src="assets/img/Icon_Contacts_white.png" onclick="inviteContact()"></div>
+    <div class="newContact roundedBorder"><img src="assets/img/Icon_Contacts_white.png" "></div>
   </div>`;
   return templateNewContact;
 }
@@ -160,10 +160,9 @@ function checkContact(i, mode) {
  * @param {string} mode - mode of either add or edit
  */
 function assignContact(i, mode) {
-  boxId = 'contactCheckBox'+mode+i;
+  boxId = 'contactCheckBox'+ mode + i;
   document.getElementById(boxId).innerHTML = /*html*/`
-    <div class="checkBoxChecked hover"></div>
-  </div>`;
+    <div class="checkBoxChecked hover"></div>`;
   assignedContactsStatus[i] = true;
 }
 
@@ -185,6 +184,7 @@ function unassignContact(i, mode) {
  * @param - no parameter
  */
 function updateAssignedContacts() {
+ 
   assignedContacts = [];
   document.getElementById('contactAlert').innerHTML = '';
   for (let i = 0; i < assignedContactsStatus.length; i++) {
@@ -194,6 +194,31 @@ function updateAssignedContacts() {
       assignedContacts.push(contact);
     }
   }
+  displayAssignedContacts();
+}
+
+
+/**
+ * creates Icons of People who are choosen in "Assigend to" dropdown
+ */
+function displayAssignedContacts(){
+  const assignedContactsDisplay = document.getElementById('assignedContactsDisplay');
+  assignedContactsDisplay.innerHTML = ''; // Zurücksetzen der Anzeige
+  if (assignedContacts.length > 0) {
+    for (const contact of assignedContacts) {    
+        let newCircle = document.createElement('div');
+        newCircle.classList.add('assignedContactsDisplayIcon');
+        newCircle.style.backgroundColor = contact.color;
+        newCircle.innerHTML = contact.acronym;
+        newCircle.title = contact.user_name;
+      assignedContactsDisplay.appendChild(newCircle);
+    }
+  }
+}
+
+
+function renderDisplayedContactsIcon(){
+
 }
 
 

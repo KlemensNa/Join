@@ -206,7 +206,7 @@ body {
     width: 385px;
     height: 136px;
     gap: 3px;
-
+    text-align: center;
 }
 
 #summary_container_bottom_right_greeting {
@@ -319,7 +319,7 @@ body {
     }    
 
     #summary_container_bottom{
-        padding: 0px 16px;
+        padding: 0px 0px;
         width: calc(100% - 32px);
         justify-content: center;
         align-items: center;

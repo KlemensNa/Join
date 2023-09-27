@@ -269,21 +269,13 @@ function getColor(assignedUser) {
 
 
 /**
- * searching function, to show task who hast the searched word in title 
+ * searching functions, to show task who hast the searched word in title and Description
  */
 function searchTasksOnBoard() {
     let searchedTask = document.getElementById('board_input').value.toUpperCase();
     let searchingElements = document.getElementsByClassName('board_task_container_title');
 
-    for (let p = 0; p < searchingElements.length; p++) {
-        let title = searchingElements[p];
-        searchValue = title.textContent || title.innerText;
-        if (searchValue.toUpperCase().indexOf(searchedTask) > -1) {
-            searchingElements[p].parentElement.parentElement.parentElement.style.display = "flex";
-        } else {
-            searchingElements[p].parentElement.parentElement.parentElement.style.display = "none";
-        }
-    }
+    searchFunction(searchedTask, searchingElements);
 }
 
 
@@ -291,6 +283,27 @@ function searchTasksOnBoardMobile() {
     let searchedTask = document.getElementById('board_input_mobile').value.toUpperCase();
     let searchingElements = document.getElementsByClassName('board_task_container_title');
 
+    searchFunction(searchedTask, searchingElements);    
+}
+
+
+function searchTaskbyDescription(){
+    let searchedTask = document.getElementById('board_input').value.toUpperCase();
+    let searchingElements = document.getElementsByClassName('board_task_container_description');
+
+    searchFunction(searchedTask, searchingElements);   
+}
+
+
+function searchTaskbyDescriptionMobile(){
+    let searchedTask = document.getElementById('board_input_mobile').value.toUpperCase();
+    let searchingElements = document.getElementsByClassName('board_task_container_description');
+
+    searchFunction(searchedTask, searchingElements);   
+}
+
+
+function searchFunction(searchedTask, searchingElements){
     for (let p = 0; p < searchingElements.length; p++) {
         let title = searchingElements[p];
         searchValue = title.textContent || title.innerText;

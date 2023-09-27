@@ -8,7 +8,7 @@
  * this function begins the rendering of the categories
  * @param - no parameter
  */
-function renderCategories() {
+async function renderCategories() {
   document.getElementById("newCategoryDotsContainer").innerHTML = "";
   document.getElementById("category").innerHTML = templateCategory();
   createFreecolors();
@@ -313,7 +313,7 @@ function addColor(i) {
  * this function adds the new category with its respective color to the JSON categories and removes the selected color from the array freeColors
  * @param - no parameter
  */
-function addCategory() {
+async function addCategory() {
   const newCategoryObject = {
     name: newCategoryName,
     colorCode: newCategoryColor,
@@ -324,7 +324,7 @@ function addCategory() {
   if (indexToRemove !== -1) {
     freeColors.splice(indexToRemove, 1);
   }
-  renderCategories();
+  await renderCategories();
   selectCategory(lastItem);
   toggleOptions("categoryOptions");
 }
@@ -364,3 +364,5 @@ function writeExistingCategory(i) {
   document.getElementById("categorySelectionCircle").innerHTML = /*html*/ `
     <div class="circle" style="background-color: ${colorCode}"></div>`;
 }
+
+

@@ -55,7 +55,7 @@
             <div id="board_container_search">
                 <div id="board_container_search_searchfield">
                     <div id="board_container_search_searchfield_inner">
-                        <input id="board_input" type="text" placeholder="Find Task" onkeyup="searchTasksOnBoard()">
+                        <input id="board_input" type="text" placeholder="Find Task" onkeyup="searchTasksOnBoard(), searchTaskbyDescription()">
                         <button id="board_search_btn">
                             <div id="board_search_stroke"></div>
                             <div id="board_search_icon"><img src="assets/img/Icon_search.png" alt=""></div>
@@ -70,7 +70,7 @@
         </div>
         <div id="board_container_search_searchfield_mobile">
             <div id="board_container_search_searchfield_inner_mobile">
-                <input id="board_input_mobile" type="text" placeholder="Find Task" onkeyup="searchTasksOnBoardMobile()">
+                <input id="board_input_mobile" type="text" placeholder="Find Task" onkeyup="searchTasksOnBoardMobile(), searchTaskbyDescriptionMobile()">
                 <button id="board_search_btn_mobile">
                     <div id="board_search_stroke_mobile"></div>
                     <div id="board_search_icon_mobile"><img src="assets/img/Icon_search.png" alt=""></div>

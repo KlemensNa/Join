@@ -7,7 +7,7 @@
  * this function clears the entire template and resets to original state
  * @param - no param
  */
-function clearTask() {
+async function clearTask() {
   document.getElementById("title").value = "";
   document.getElementById("description").value = "";
   document.getElementById("categoryOptions").innerHTML = "";
@@ -21,7 +21,7 @@ function clearTask() {
   document.getElementById("mediumAdd").classList.remove("medium");
   document.getElementById("lowAdd").classList.remove("low");
   document.getElementById("popupNotice").classList.remove("visible");
-  renderCategories();
+  await renderCategories();
   renderContacts();
   renderPrio();
   assignedPrio = "";

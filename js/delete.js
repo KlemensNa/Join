@@ -49,12 +49,12 @@ function askBeforeDeleteCategory(categoryToDelete, i) {
  * @param {string} categoryToDelete - this category has been selected to be deleted
  * @param {number} i - index of the JSON categories
  */
-function deleteCategory(categoryToDelete, i) {
+async function deleteCategory(categoryToDelete, i) {
   checkCategoryIfUsed = checkCategoryToDelete(categoryToDelete);
   if (checkCategoryIfUsed === false) {
     categories.splice(i, 1);
     document.getElementById("categoryAlert").innerHTML = "";
-    renderCategories();
+    await renderCategories();
     saveOnlyCategories();
   } else {
     document.getElementById("categoryAlert").innerHTML = "Category is in use";
