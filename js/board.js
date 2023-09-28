@@ -315,7 +315,6 @@ function searchFunction(searchedTask, searchingElements){
     }
 }
 
-
 /**
  * Drag and Drop functions
  * 
@@ -325,6 +324,7 @@ function startDragging(id) {
     currentDraggedElement = id;
     let draggedCard = document.getElementById(currentDraggedElement);
 }
+
 
 function allowDrop(ev) {
     ev.preventDefault();

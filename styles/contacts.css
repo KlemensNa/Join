@@ -91,6 +91,12 @@ html {
   box-shadow: 0 0px 0px #29abe2;
 }
 
+#add_new_contact_Icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .contact_list_letter_container {
   width: 100%;
 }

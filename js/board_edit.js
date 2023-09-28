@@ -163,7 +163,7 @@ function renderSubtasksWithoutHook(index, id) {
     document.getElementById('editTaskContainerSubtasksTasks').innerHTML += /*html*/`
             <div class="subtaskInOverview">
                 <div id="checkBoxEdit${id}${index}" class="checkBox hover" onclick="addCheck(${index}, ${id},'Edit')"></div>
-                <div>${subTasksArray[index].subTaskName}</div>
+                <div class="checkboxTitle">${subTasksArray[index].subTaskName}</div>
             </div>
         `
 }
