@@ -265,7 +265,7 @@ function changeDisplay() {
 function capitalizeName(modal) {
   let nameOnInput = document.getElementById(modal).value;
   let arr = nameOnInput.split(" ");
-  for(let i = 0; i < arr.length; i++){
+  for (let i = 0; i < arr.length; i++) {
     arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
     let fullName = arr.join(" ");
     document.getElementById(modal).value = fullName;
