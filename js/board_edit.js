@@ -388,7 +388,6 @@ async function saveEditedBoard(id) {
 
 async function saveBoard(id) {
         tasks[id]['subtasks'] = subTasksArray;
-        console.log(tasks[id]);
         await saveTask();
         closeEditTask();
         await renderBoardCards();
